@@ -10,6 +10,10 @@
     --water-blue: #3498db;         /* 水循环蓝 */
     --text-dark: #2c3e50;         /* 正文深色 */
     --section-bg: #f9fbe7;         /* 区块背景 */
+
+    color-scheme: light !important; /* 声明仅支持浅色模式[2](@ref) */
+    background-color: #ffffff !important;
+    color: #333333 !important;
 }
 
 * {
@@ -17,6 +21,8 @@
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
+
+    forced-color-adjust: none !important; /* 阻止系统主题影响[2](@ref) */
 }
 
 /* 导航栏 */
