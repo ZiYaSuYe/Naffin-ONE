@@ -3,42 +3,116 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>项目介绍 - 金花香猪生态养殖</title>
-        <link rel="stylesheet" href="assets/css/style.css">
+        <title>"金花香猪"智能化生态养殖场</title>
+        <link rel="stylesheet" href="assets/css/adopt.css">
     </head>
 <body>
     <nav class="navbar">
         <ul class="nav-links">
-            <li><a href="index.html">项目介绍</a></li>
-            <li><a href="about.html">关于我们</a></li>
-            <li><a href="adopt.html">认养系统</a></li>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="index.html#intro">关于项目</a></li>
+            <li><a href="adopt.html">立即认养</a></li>
         </ul>
     </nav>
 
-    <div class="section">
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>1. 选择猪只</h3>
-                <p>在线浏览待认养猪只信息</p>
+    <div class="container">
+        <!-- 系统架构 -->
+        <section class="arch-section">
+            <h2 class="section-title pulse">智慧认养系统架构</h2>
+            <div class="arch-flow">
+                <div class="flow-card">
+                    <div class="flow-icon">📱</div>
+                    <h3>消费者端</h3>
+                    <p>小程序/APP实时交互</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-card">
+                    <div class="flow-icon">🖥️</div>
+                    <h3>数据中台</h3>
+                    <p>区块链智能管理</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-card">
+                    <div class="flow-icon">🏭</div>
+                    <h3>养殖端</h3>
+                    <p>物联网设备联动</p>
+                </div>
             </div>
-            <div class="timeline-item">
-                <h3>2. 签订协议</h3>
-                <p>电子签订认养协议</p>
-            </div>
-        </div>
+        </section>
 
-        <form action="confirm.html" class="card">
-            <h2>认养申请</h2>
-            <div class="form-group">
-                <label>选择套餐</label>
-                <select required>
-                    <option value="">请选择套餐类型</option>
-                    <option>基础认养（6个月）</option>
-                    <option>VIP认养（12个月）</option>
-                </select>
+        <!-- 核心功能 -->
+        <section class="feature-section">
+            <!-- 消费者端功能 -->
+            <div class="tab-content active" id="consumer">
+                <div class="feature-card">
+                    <div class="card-media">
+                        <div class="live-preview">
+                            <div class="loading-spinner">
+                                <img src="https://himg2.huanqiucdn.cn/attachment2010/2018/0424/20180424074817956.gif?imageView2/2/w/750" alt="产品演示" />
+                            </div>
+                            <span class="live-badge">直播中......</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>实时全景监控</h3>
+                        <ul class="data-list">
+                            <li>
+                                <span class="data-label">体温</span>
+                                <div class="data-value">
+                                    38.5℃
+                                    <span class="data-trend up"></span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="data-label">今日步数</span>
+                                <div class="data-value">
+                                    1,145步
+                                    <div class="progress-bar" style="width: 65%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="data-label">心跳💗</span>
+                                <div class="data-value">
+                                    正常😌
+                                </div>
+                            </li>
+                            <li>
+                                <span class="data-label">呼吸😤</span>
+                                <div class="data-value">
+                                    非常稳定🫡
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button type="submit" class="btn">提交申请</button>
-        </form>
+
+            <!-- 区块链信息 -->
+            <div class="blockchain-card">
+                <div class="blockchain-visual">
+                    <div class="chain-animation"></div>
+                    <div class="qr-code"></div>
+                </div>
+                <div class="blockchain-info">
+                    <h3>区块链溯源保障</h3>
+                    <ul class="chain-list">
+                        <li>每头猪独立数字身份证
+                            ：基于超高频RFID技术，集成个体出生日期、遗传谱系、免疫记录等全生命周期数据，结合区块链存证确保信息不可篡改。该标识实现母猪发情期精准监测误差≤12小时，疫苗到期自动提醒执行率提升至98%，配合智能称重分栏系统使同批次猪只体重差异缩小15%，同时打通检疫申报与屠宰追溯链条，使产品溢价提升8%，全程数据追溯响应时间从72小时压缩至2秒，显著提升生物安全管控与品牌价值构建能力。
+                        </li>
+                        <li>全生命周期数据上链：依托区块链技术将猪只出生记录、免疫注射、转栏称重等300余项关键节点信息实时加密存储，通过分布式账本构建不可篡改的溯源链条。该系统使猪瘟疫苗注射记录核查时间从3天压缩至10秒，结合智能合约自动触发异常预警（如超过48小时未采食），使弱猪检出时效提前72小时，同时打通屠宰加工环节的区块链存证，实现从养殖场到零售终端的全程追溯，产品溢价率提高，消费者投诉率下降，显著提升质量管控能力与品牌公信力。</li>
+                        <li>智能合约自动执行：基于区块链预设条件触发业务流程，在智慧养殖中实现饲料结算、保险赔付等18类业务的去人工化操作。当猪只体重达出栏标准时，合约自动生成电子检疫证并同步至屠宰场物流系统；疫苗接种数据异常立即冻结相关批次销售权限；结合物联网称重数据，合约在育肥期结束时自动核算料肉比并生成精准饲喂优化方案，使结算纠纷减少90%，保险理赔时效从15天压缩至2小时，同时通过动态调整饲喂参数使日均增重波动范围缩小40%，养殖端与屠宰端数据交互效率提升300%，构建可信自动化生产体系。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <div class="confirmation-container">
+        <a href="confirm.html" class="confirm-btn">
+            <span class="btn-text">确认认养</span>
+            <div class="btn-feedback"></div>
+        </a>
+    </div>
+
 </body>
 </html>

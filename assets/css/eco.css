@@ -1,0 +1,250 @@
+/* 基础样式 */
+:root {
+    --primary: #2E7D32;
+    --secondary: #81C784;
+    --background: #F8F9FA;
+    --text: #333;
+
+    --primary-green: #2ecc71;     /* 生态绿 */
+    --earth-brown: #8d6e63;       /* 大地棕 */
+    --water-blue: #3498db;         /* 水循环蓝 */
+    --text-dark: #2c3e50;         /* 正文深色 */
+    --section-bg: #f9fbe7;         /* 区块背景 */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* 导航栏 */
+.navbar {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+/* 生态理念核心模块 */
+.eco-concept {
+    background: var(--section-bg);
+    border-radius: 2rem;
+    padding: 3rem;
+    margin: 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+}
+
+.concept-visual img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 1.5rem;
+}
+
+.cycle-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.cycle-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.cycle-item:hover {
+    transform: translateY(-5px);
+}
+
+.cycle-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.arrow {
+    font-size: 2rem;
+    color: var(--earth-brown);
+    margin: 0 1rem;
+}
+
+/* 处理工艺展示 */
+.tech-showcase {
+    margin: 4rem 0;
+}
+
+.tech-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: white;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.tech-img img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.tech-detail {
+    padding: 2rem;
+    background: linear-gradient(to bottom right, var(--section-bg), white);
+}
+
+.tech-spec li {
+    padding: 1rem;
+    margin: 1rem 0;
+    background: rgba(46, 204, 113, 0.1);
+    border-left: 4px solid var(--primary-green);
+    border-radius: 0.5rem;
+}
+
+/* 生态效益模块 */
+.eco-benefit {
+    margin: 4rem 0;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-item {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.benefit-visual img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    filter: brightness(0.9);
+}
+
+.benefit-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+}
+
+.benefit-info span {
+    font-size: 2rem;
+    color: var(--primary-green);
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .eco-concept {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .cycle-flow {
+        flex-direction: column;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+        margin: 1rem 0;
+    }
+}
+
+    /* 全局平滑滚动 */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* 目标位置视觉提示 */
+    .intro:target {
+        animation: highlight 1.5s ease;
+    }
+    
+    @keyframes highlight {
+        from { box-shadow: 0 0 0 3px rgba(46,204,113,0.5); }
+        to { box-shadow: none; }
+    }
+
+
+        /* 消除点击延迟 */
+a, button, input {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* 防止字体缩放 */
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* iPhone X以上机型适配 */
+@supports (padding: max(0px)) {
+    .content {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+}
+
+/* 图片自适应 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* WebP格式优先 */
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* 按需加载背景图 */
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+    .banner {
+        background-image: url('image@2x.jpg');
+    }
+}
