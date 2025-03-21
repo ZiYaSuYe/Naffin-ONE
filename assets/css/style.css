@@ -121,8 +121,8 @@ body {
 /* 首页特有样式 */
 .hero {
     height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('../images/hero.jpg') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://new-img.gdzjdaily.com.cn/a/10001/202110/9150d25732df53d9bc39dd1cb451c4e7.jpeg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,7 +131,7 @@ body {
 
 .feature-img {
     width: 100%;
-    height: 200px;
+    height: 400px;
     object-fit: cover;
     border-radius: 8px;
     margin: 1rem 0;
@@ -172,7 +172,6 @@ body {
     margin: 1.5rem 0;
 }
 
-/* 在style.css添加 */
 .page-enter {
     opacity: 0;
     transform: translateY(20px);
@@ -205,3 +204,108 @@ input, select, textarea {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+    /*地图模块*/
+       /* 容器样式 */
+       .map-container {
+        width: 100%;
+        height: 600px;
+        margin: 20px auto;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        position: relative;
+    }
+    
+    /* 信息窗口样式 */
+    .info-window {
+        padding: 20px;
+        background: rgba(255,255,255,0.95);
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        min-width: 280px;
+    }
+    
+    .info-title {
+        color: #2c7a3e;
+        font-size: 20px;
+        margin-bottom: 12px;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 8px;
+    }
+    
+    .info-content {
+        line-height: 1.6;
+        color: #555;
+    }
+    
+    .highlight {
+        color: #d32f2f;
+        font-weight: 500;
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .map-container {
+            height: 400px;
+        }
+        
+        .info-window {
+            min-width: 240px;
+            padding: 15px;
+        }
+    }
+
+    /* 全局平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 目标位置视觉提示 */
+.intro:target {
+    animation: highlight 1.5s ease;
+}
+
+@keyframes highlight {
+    from { box-shadow: 0 0 0 3px rgba(46,204,113,0.5); }
+    to { box-shadow: none; }
+}
+
+
+    /* 消除点击延迟 */
+    a, button, input {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    
+    /* 防止字体缩放 */
+    body {
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+    
+    /* iPhone X以上机型适配 */
+    @supports (padding: max(0px)) {
+        .content {
+            padding-left: max(1rem, env(safe-area-inset-left));
+            padding-right: max(1rem, env(safe-area-inset-right));
+        }
+    }
+    
+    /* 图片自适应 */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        /* WebP格式优先 */
+        image-rendering: -webkit-optimize-contrast;
+    }
+    
+    /* 按需加载背景图 */
+    @media 
+    (-webkit-min-device-pixel-ratio: 2), 
+    (min-resolution: 192dpi) { 
+        .banner {
+            background-image: url('image@2x.jpg');
+        }
+    }

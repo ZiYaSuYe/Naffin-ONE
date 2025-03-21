@@ -3,40 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>项目介绍 - 金花香猪生态养殖</title>
+    <title>"金花香猪"智能化生态养殖场</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <nav class="navbar">
         <ul class="nav-links">
-            <li><a href="index.html">项目介绍</a></li>
-            <li><a href="about.html">关于我们</a></li>
-            <li><a href="adopt.html">认养系统</a></li>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="#intro">关于项目</a></li>
+            <li><a href="adopt.html">立即认养</a></li>
         </ul>
     </nav>
 
     <div class="hero">
-        <h1>智慧生态养殖新典范</h1>
+        <h1>“金花香猪”养殖场——智慧生态养殖新典范</h1>
     </div>
 
-    <div class="section">
-        <div class="card">
-            <h2>项目简介</h2>
-            <img src="assets/images/project.jpg" class="feature-img">
+    <!--地图组件-->
+    <div id="mapContainer" class="map-container"></div>
+
+    <!-- 高德地图API -->
+    <script src="https://webapi.amap.com/maps?v=2.0&key=b945745d041eeaedafa075458ed13826"></script>
+    <script>
+        // 初始化地图
+        function initMap() {
+            // 畜牧场坐标（东经111.9736°，北纬22.7325°）
+            const position = [111.9736, 22.7325]
+            
+            // 创建地图实例
+            const map = new AMap.Map('mapContainer', {
+                zoom: 15,  // 初始缩放级别
+                center: position,  // 初始中心点
+                resizeEnable: true,
+                features: ['bg', 'road', 'building']
+            });
+
+            // 创建信息窗口内容
+            const infoWindow = new AMap.InfoWindow({
+                content: `<div class="info-window">
+                            <h3 class="info-title">金花香猪生态猪场</h3>
+                            <div class="info-content">
+                                <p>📍 地址：广东省云浮市云安区石城镇新斜戈</p>
+                                <p>📐 占地面积：<span class="highlight">378亩</span></p>
+                                <p>🌱 种养结合：<span class="highlight">330亩桑树种植区</span></p>
+                                <p>🏭 生产规模：<span class="highlight">年出栏10,535头</span></p>
+                            </div>
+                          </div>`,
+                offset: new AMap.Pixel(0, -30)
+            });
+
+            // 创建标记
+            const marker = new AMap.Marker({
+                position: position,
+                map: map,
+                icon: 'https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png',
+                title: '金花香猪生态猪场'
+            });
+
+            // 直接打开信息窗口
+            infoWindow.open(map, marker.getPosition());
+
+            // 添加比例尺
+            map.addControl(new AMap.Scale());
+            
+            // 添加缩放控件
+            map.addControl(new AMap.ToolBar());
+        }
+
+        // 初始化执行
+        initMap();
+    </script>
+
+
+    <div class="section" id="intro">
+        <div class="card" onclick="window.location.href='pig.html';" >
+            <h2>特色猪种</h2>
+            <img src="assets/images/pig.cover.jpg" class="feature-img">
             <p>通过智能化养殖技术实现年出栏量10,535头商品猪，建立种养结合的生态循环模式...</p>
         </div>
 
-        <div class="grid">
-            <div class="card">
-                <h3>智能监控</h3>
-                <img src="assets/images/tech.jpg" class="feature-img">
-                <p>24小时物联网监控系统，实时追踪生长数据...</p>
-            </div>
-            <div class="card">
-                <h3>生态循环</h3>
-                <img src="assets/images/eco.jpg" class="feature-img">
-                <p>粪污资源化利用率达到100%，实现零污染排放...</p>
-            </div>
+        <div class="card" onclick="window.location.href='wise.html';">
+            <h2>智慧养殖</h2>
+            <img src="assets/images/tech.jpg" class="feature-img">
+            <p>24小时物联网监控系统，实时追踪生长数据...</p>
+        </div>
+
+        <div class="card" onclick="window.location.href='eco.html';">
+            <h2>生态理念</h2>
+            <img src="assets/images/sangye.jpg" class="feature-img">
+            <p>粪污资源化利用率达到100%，实现零污染排放...</p>
         </div>
     </div>
 </body>

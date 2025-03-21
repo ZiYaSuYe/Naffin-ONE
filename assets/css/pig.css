@@ -1,0 +1,334 @@
+/* styles.css */
+/* 基础设置 */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --accent-color: #FFC107;
+    --text-dark: #2D3436;
+    --text-light: #F5F6FA;
+    --gradient-green: linear-gradient(135deg, #4CAF50 0%, #81C784 100%);
+    --gradient-blue: linear-gradient(135deg, #2196F3 0%, #64B5F6 100%);
+    --shadow-light: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-heavy: 0 8px 30px rgba(0,0,0,0.2);
+
+    --primary: #2E7D32;
+    --secondary: #81C784;
+    --background: #F8F9FA;
+    --text: #333;
+
+    --primary-accent: #2c3e50;
+    --secondary-accent: #e74c3c;
+    --transition-duration: 0.6s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* 基础布局 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* 头图模块 */
+.breed-header {
+    background: var(--gradient-green),
+                url('https://new-img.gdzjdaily.com.cn/a/10001/202110/9150d25732df53d9bc39dd1cb451c4e7.jpeg') center/cover;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    height: 60vh;
+    margin-bottom: 3rem;
+}
+
+.hero-overlay {
+    background: rgba(0,0,0,0.4);
+    padding: 4rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title-glow {
+    font-size: 3.5rem;
+    color: var(--text-light);
+    text-shadow: 0 0 20px rgba(76,175,80,0.8);
+    margin-bottom: 1.5rem;
+}
+
+/* 数据卡片 */
+.data-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.maternal-card {
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.paternal-card {
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+/* 数据展示 */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.data-item {
+    text-align: center;
+    padding: 1rem;
+    background: #F8F9FA;
+    border-radius: 8px;
+}
+
+.gradient-text {
+    background: var(--gradient-green);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+/* 表格优化 */
+.responsive-table {
+    overflow-x: auto;
+}
+
+.trait-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: var(--shadow-light);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.trait-table th {
+    background: var(--primary-color);
+    color: white;
+    padding: 1.2rem;
+    font-weight: 500;
+}
+
+.trait-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.highlight-cell {
+    background: #E8F5E9;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* 导航栏 */
+.navbar {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .title-glow {
+        font-size: 2.5rem;
+    }
+    
+    .data-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 畜牧品种展示模块样式 */
+.pig-cross-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: linear-gradient(145deg, #f8f9fa 0%, #e9f5e7 100%);
+    border-radius: 20px;
+    box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.pig-cross-pic {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    transform: perspective(1500px) rotateY(5deg);
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pig-cross-container p {
+    color: #2d3436;
+    font-family: 'Segoe UI', '微软雅黑', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    position: relative;
+}
+
+.pig-cross-container p::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 80%;
+    background: linear-gradient(to bottom, #4CAF50, #81C784);
+    border-radius: 2px;
+}
+
+/* 悬停动效 */
+.pig-cross-pic:hover {
+    transform: perspective(1500px) rotateY(0deg);
+}
+
+@media (max-width: 992px) {
+    .pig-cross-container {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    .pig-cross-pic {
+        height: 300px;
+        transform: perspective(800px) rotateX(5deg);
+    }
+
+    .pig-cross-container p {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .pig-cross-container p::before {
+        left: 0;
+        top: -1rem;
+        transform: translateY(0);
+        width: 60px;
+        height: 3px;
+    }
+}
+
+@media (max-width: 576px) {
+    .pig-cross-pic {
+        height: 250px;
+    }
+}
+
+    /* 全局平滑滚动 */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* 目标位置视觉提示 */
+    .intro:target {
+        animation: highlight 1.5s ease;
+    }
+    
+    @keyframes highlight {
+        from { box-shadow: 0 0 0 3px rgba(46,204,113,0.5); }
+        to { box-shadow: none; }
+    }
+
+
+        /* 消除点击延迟 */
+a, button, input {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* 防止字体缩放 */
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* iPhone X以上机型适配 */
+@supports (padding: max(0px)) {
+    .content {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+}
+
+/* 图片自适应 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* WebP格式优先 */
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* 按需加载背景图 */
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+    .banner {
+        background-image: url('image@2x.jpg');
+    }
+}
