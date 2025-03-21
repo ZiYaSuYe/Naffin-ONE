@@ -20,6 +20,31 @@
         <h1>“金花香猪”养殖场——智慧生态养殖新典范</h1>
     </div>
 
+        <!-- 视频容器 -->
+        <div class="video-container">
+            <video class="custom-video" 
+                   poster="poster.jpg" 
+                   controlsList="nodownload" 
+                   controls
+                   muted 
+                   autoplay="{{true}}"
+                   loop="{{true}}"
+                   disablePictureInPicture>
+                <source src="assets/video/skyline.mp4" type="video/mp4">
+                <!-- <source src="video.webm" type="video/webm"> -->
+                <!-- 您的浏览器不支持视频播放 -->
+            </video>
+            
+            <!-- 自定义控制栏 -->
+            <!-- <div class="video-controls">
+                <button class="play-btn">▶</button>
+                <input type="range" class="progress-bar" value="0">
+                <span class="time">00:00 / 00:00</span>
+                <button class="fullscreen-btn">⤡</button>
+            </div> -->
+        </div>
+        <script src="script.js"></script>
+
     <!--地图组件-->
     <div id="mapContainer" class="map-container"></div>
 

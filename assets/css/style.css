@@ -277,4 +277,117 @@ html {
     to { box-shadow: none; }
 }
 
+/* 基础重置 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 视频容器 */
+.video-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* 视频元素 */
+.custom-video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    display: block;
+}
+
+/* 控制栏 */
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: opacity 0.3s;
+}
+
+/* 播放按钮 */
+.play-btn {
+    background: rgba(255,255,255,0.1);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.play-btn:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+}
+
+/* 进度条 */
+.progress-bar {
+    flex-grow: 1;
+    height: 5px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    appearance: none;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* 时间显示 */
+.time {
+    color: #fff;
+    font-family: Arial;
+    font-size: 0.9rem;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* 全屏按钮 */
+.fullscreen-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .video-container {
+        width: 95%;
+        margin: 1rem auto;
+    }
+    
+    .video-controls {
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+    
+    .play-btn {
+        width: 35px;
+        height: 35px;
+    }
+}
 
