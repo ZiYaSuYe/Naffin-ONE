@@ -107,6 +107,29 @@
         </section>
     </div>
 
+    <div class="batch-selector">
+        <div class="selector-header">
+            <h2 class="selector-title">🐷 我要认养</h2>
+        </div>
+        
+        <form id="batchForm">
+            <div class="form-group">
+                <label class="form-label" for="adoptionBatch">认养批次</label>
+                <select class="custom-select" id="adoptionBatch" required>
+                    <option value="">加载中...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="retailBatch">零售批次</label>
+                <select class="custom-select" id="retailBatch" disabled>
+                    <option value="">请先选择认养批次</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <script src="adopt_test1.js"></script>
+
     <div class="confirmation-container">
         <a href="confirm.html" class="confirm-btn">
             <span class="btn-text">确认认养</span>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>"金花香猪"智能化生态养殖场</title>
+        <link rel="stylesheet" href="assets/css/adpot_test1.css">
+    </head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="index.html#intro">关于项目</a></li>
+            <li><a href="adopt.html">立即认养</a></li>
+        </ul>
+    </nav>
+
+    <div class="batch-selector">
+        <div class="selector-header">
+            <h2 class="selector-title">🐷 我要认养</h2>
+        </div>
+        
+        <form id="batchForm">
+            <div class="form-group">
+                <label class="form-label" for="adoptionBatch">认养批次</label>
+                <select class="custom-select" id="adoptionBatch" required>
+                    <option value="">加载中...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="retailBatch">零售批次</label>
+                <select class="custom-select" id="retailBatch" disabled>
+                    <option value="">请先选择认养批次</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    
+    <script src="adopt_test1.js"></script>
+
+</body>
+</html>
